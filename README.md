@@ -1,6 +1,6 @@
 # Obra Studios
 
-Protótipo de loja de moda — site estático (HTML, CSS e JavaScript), sem servidor.
+Protótipo de loja de moda — site estático (HTML, CSS e JavaScript), sem servidor. **Guia completo para mexer no projeto: [PROJETO.md](PROJETO.md).**
 
 Demonstração: nenhum pagamento é processado e nenhum dado é enviado. Fotos: [Unsplash](https://unsplash.com).
 
