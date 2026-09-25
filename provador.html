@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Provador — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="provador">
+
+  <div id="site-header"></div>
+
+  <main class="fit">
+    <div class="page-head page-head--flush fit__head">
+      <h1 class="acc__title">Provador</h1>
+      <nav class="plp__types" aria-label="Ferramentas do provador">
+        <a href="#tamanho" class="label">Seu tamanho</a>
+        <a href="#look" class="label">Monte o look</a>
+      </nav>
+    </div>
+
+    <!-- 1. Seu tamanho -->
+    <section class="fit-size" id="tamanho" aria-labelledby="sizeTitle">
+      <form class="fit-size__form" id="bodyForm" novalidate>
+        <h2 class="label co__title" id="sizeTitle">Suas medidas</h2>
+        <p class="label muted fit__hint">Meça o corpo com uma fita métrica, sem apertar. Você não precisa preencher tudo: cada peça usa só as medidas dela.</p>
+
+        <div class="fit-fields">
+          <div class="field">
+            <label class="label muted" for="bBusto">Busto / peito</label>
+            <div class="unit-input"><input id="bBusto" name="busto" type="number" inputmode="decimal" min="60" max="160" step="0.5" placeholder="88"><span class="label muted">cm</span></div>
+          </div>
+          <div class="field">
+            <label class="label muted" for="bCintura">Cintura</label>
+            <div class="unit-input"><input id="bCintura" name="cintura" type="number" inputmode="decimal" min="50" max="150" step="0.5" placeholder="70"><span class="label muted">cm</span></div>
+          </div>
+          <div class="field">
+            <label class="label muted" for="bQuadril">Quadril</label>
+            <div class="unit-input"><input id="bQuadril" name="quadril" type="number" inputmode="decimal" min="70" max="170" step="0.5" placeholder="96"><span class="label muted">cm</span></div>
+          </div>
+          <div class="field">
+            <label class="label muted" for="bPe">Comprimento do pé</label>
+            <div class="unit-input"><input id="bPe" name="pe" type="number" inputmode="decimal" min="20" max="32" step="0.1" placeholder="24,3"><span class="label muted">cm</span></div>
+          </div>
+        </div>
+
+        <fieldset class="pdp__field">
+          <legend class="label muted">Como você gosta de vestir</legend>
+          <div class="options" id="prefOptions">
+            <button type="button" class="label option" data-pref="justo" aria-pressed="false">Mais justo</button>
+            <button type="button" class="label option is-active" data-pref="regular" aria-pressed="true">Como indicado</button>
+            <button type="button" class="label option" data-pref="solto" aria-pressed="false">Mais solto</button>
+          </div>
+        </fieldset>
+
+        <details class="fit-howto">
+          <summary class="label">Como medir</summary>
+          <figure class="fit-howto__body">
+            <svg viewBox="0 0 120 220" aria-hidden="true" class="fit-figure">
+              <circle cx="60" cy="22" r="14" />
+              <path d="M38 48 Q60 40 82 48 L88 100 Q60 108 32 100 Z" />
+              <path d="M34 100 Q60 110 86 100 L90 130 Q60 138 30 130 Z" />
+              <path d="M32 130 L44 210 M88 130 L76 210 M58 136 L54 210 M62 136 L66 210" />
+              <line x1="30" y1="62" x2="90" y2="62" class="fit-figure__m" />
+              <line x1="33" y1="96" x2="87" y2="96" class="fit-figure__m" />
+              <line x1="30" y1="124" x2="90" y2="124" class="fit-figure__m" />
+            </svg>
+            <ul>
+              <li class="label"><strong>Busto / peito</strong> — na parte mais cheia, com a fita reta nas costas.</li>
+              <li class="label"><strong>Cintura</strong> — na parte mais estreita, acima do umbigo.</li>
+              <li class="label"><strong>Quadril</strong> — na parte mais larga, com os pés juntos.</li>
+              <li class="label"><strong>Pé</strong> — em pé sobre uma folha, do calcanhar à ponta do dedo maior.</li>
+            </ul>
+          </figure>
+        </details>
+
+        <div class="acc-form__actions">
+          <button type="submit" class="label btn">Salvar minhas medidas</button>
+          <button type="button" class="label btn btn--ghost" id="bodyClear">Limpar</button>
+        </div>
+        <p class="label muted fit__saved" id="bodySaved" hidden>Medidas salvas neste navegador. As páginas de produto já mostram o seu tamanho.</p>
+      </form>
+
+      <div class="fit-size__results">
+        <div class="fit-results__head">
+          <h2 class="label co__title">Seu tamanho em cada peça</h2>
+          <div class="plp__types" id="sizeFilter">
+            <button class="label is-active" data-g="">Todas</button>
+            <button class="label" data-g="novidades">Feminino</button>
+            <button class="label" data-g="masculino">Masculino</button>
+          </div>
+        </div>
+        <ul class="fit-list" id="fitList" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- 2. Monte o look -->
+    <section class="section fit-look" id="look" aria-labelledby="lookTitle">
+      <div class="fit-look__head">
+        <h2 class="page-h2" id="lookTitle">Monte o look</h2>
+        <div class="fit-look__tools">
+          <div class="plp__types" id="lookFilter">
+            <button class="label is-active" data-g="">Todas as peças</button>
+            <button class="label" data-g="novidades">Feminino</button>
+            <button class="label" data-g="masculino">Masculino</button>
+          </div>
+          <button class="label link" id="shuffle">↻ Look aleatório</button>
+        </div>
+      </div>
+
+      <div class="board" id="board"></div>
+
+      <div class="fit-look__summary">
+        <ul class="fit-look__items" id="lookItems"></ul>
+        <div class="fit-look__total">
+          <div class="bag__row bag__row--total"><span class="label">Total do look</span><span class="label" id="lookTotal"></span></div>
+          <button class="label btn" id="addLook">Adicionar look à sacola</button>
+          <button class="label link" id="shareLook">Copiar link deste look</button>
+          <p class="label muted" id="lookMsg" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="provador.js"></script>
+</body>
+</html>

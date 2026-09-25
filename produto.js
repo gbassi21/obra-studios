@@ -5,6 +5,18 @@ const product = findProduct(params.get("id")) || PRODUCTS[0];
 let color = product.colors[0];
 let size = product.sizes.length === 1 ? product.sizes[0] : null;
 
+// Tamanho recomendado pelo Provador (se a pessoa salvou as medidas)
+const fit = recommendSize(product, Body.get());
+const fitNote = document.getElementById("fitNote");
+if (product.fit && fit.size) {
+  size = size || fit.size;
+  fitNote.innerHTML = `Seu tamanho: <strong>${fit.size}</strong>${fit.alt ? ` (ou ${fit.alt})` : ""} · <a href="provador.html?id=${product.id}" class="link">ver por quê</a>`;
+} else if (product.fit) {
+  fitNote.innerHTML = `<a href="provador.html?id=${product.id}" class="link">Descubra seu tamanho no Provador →</a>`;
+} else {
+  fitNote.hidden = true;
+}
+
 document.title = `${product.name} — Obra Studios`;
 
 document.getElementById("crumbs").innerHTML =

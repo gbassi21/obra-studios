@@ -26,7 +26,7 @@ const FAQ = [
     { q: "Meu pagamento foi recusado. E agora?", a: "Confira os dados do cartão e o limite disponível. Se o problema continuar, tente outro cartão ou pague com Pix." },
   ]},
   { id: "produtos", title: "Produtos e cuidados", items: [
-    { q: "Como escolho meu tamanho?", a: "Consulte o guia de medidas nesta página e compare com as suas medidas. Na dúvida, fale com a gente pelo WhatsApp — ajudamos a escolher." },
+    { q: "Como escolho meu tamanho?", a: "Use o <a href=\"provador.html\" class=\"link\">Provador</a>: informe suas medidas e ele recomenda o tamanho de cada peça. Você também pode consultar o guia de medidas nesta página ou falar com a gente pelo WhatsApp." },
     { q: "Um tamanho esgotado vai voltar?", a: "Muitas peças voltam ao estoque ao longo da temporada. Adicione à sua lista de desejos para encontrar a peça rapidamente." },
     { q: "Como cuidar das peças de lã e cashmere?", a: "Lave à mão em água fria com sabão neutro, sem torcer, e seque na horizontal, à sombra. Guarde dobradas — nunca em cabide." },
     { q: "Como cuidar do denim?", a: "Lave pouco, do avesso, em água fria. Isso preserva a cor e o caimento por mais tempo. Não use secadora." },
@@ -38,17 +38,6 @@ const FAQ = [
   ]},
 ];
 
-// Tabelas de medidas (cm)
-const SIZE_TABLES = {
-  feminino: { head: ["Tamanho", "Busto", "Cintura", "Quadril"], rows: [
-    ["PP", 80, 62, 88], ["P", 84, 66, 92], ["M", 88, 70, 96], ["G", 94, 76, 102], ["GG", 100, 82, 108] ] },
-  masculino: { head: ["Tamanho", "Peito", "Cintura", "Quadril"], rows: [
-    ["P", 92, 78, 94], ["M", 98, 84, 100], ["G", 104, 90, 106], ["GG", 110, 96, 112] ] },
-  jeans: { head: ["Tamanho", "Cintura", "Quadril", "Entrepernas"], rows: [
-    ["34", 64, 90, 80], ["36", 68, 94, 81], ["38", 72, 98, 82], ["40", 76, 102, 83], ["42", 80, 106, 84], ["44", 84, 110, 85], ["46", 88, 114, 86] ] },
-  calcados: { head: ["Tamanho BR", "EU", "Pé"], rows: [
-    ["35", 36, 23], ["36", 37, 23.7], ["37", 38, 24.3], ["38", 39, 25], ["39", 40, 25.7], ["40", 41, 26.3] ], noConvert: [1] },
-};
 
 const $ = (id) => document.getElementById(id);
 const esc = (s = "") => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);

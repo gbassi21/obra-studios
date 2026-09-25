@@ -73,6 +73,12 @@ const Account = {
   },
 };
 
+// Medidas do corpo salvas pelo Provador
+const Body = {
+  get: () => Store.get("obra-body", {}),
+  set(body) { Store.set("obra-body", body); },
+};
+
 function updateCartCount() {
   const el = document.getElementById("cartCount");
   if (el) el.textContent = String(Cart.count()).padStart(2, "0");
@@ -109,6 +115,7 @@ function renderChrome() {
       <a href="categoria.html?g=masculino" class="label">Masculino</a>
       <a href="categoria.html?g=todos&tipo=Bolsas" class="label">Bolsas</a>
       <a href="desfile.html" class="label">Desfile</a>
+      <a href="provador.html" class="label">Provador</a>
       <a href="conta.html" class="label show-sm">Conta</a>
       <a href="ajuda.html" class="label show-sm">Ajuda</a>
     </nav>
