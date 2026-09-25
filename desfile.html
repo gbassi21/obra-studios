@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Desfile — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="desfile">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Capa -->
+    <section class="rw-hero">
+      <img id="heroImg" alt="">
+      <div class="rw-hero__meta">
+        <span class="label" id="heroPlace"></span>
+        <span class="label" id="heroDate"></span>
+      </div>
+      <h1 class="rw-hero__title" id="heroTitle"></h1>
+      <a href="#looks" class="label rw-hero__cta">Ver os looks ↓</a>
+    </section>
+
+    <!-- Texto da coleção -->
+    <section class="rw-intro">
+      <p class="label muted" id="introLabel"></p>
+      <p class="rw-intro__text" id="introText"></p>
+    </section>
+
+    <!-- Looks -->
+    <section class="section" id="looks" aria-labelledby="looksTitle">
+      <div class="section__head">
+        <h2 class="label" id="looksTitle">Looks</h2>
+        <div class="plp__tools">
+          <span class="label muted hide-sm">Ver</span>
+          <button class="label view-btn" data-cols="2" aria-pressed="false">2</button>
+          <button class="label view-btn is-active" data-cols="4" aria-pressed="true">4</button>
+        </div>
+      </div>
+      <div class="rw-grid" id="lookGrid"></div>
+    </section>
+
+    <!-- Bastidores -->
+    <section class="section" aria-labelledby="bsTitle">
+      <div class="section__head">
+        <h2 class="label" id="bsTitle">Bastidores</h2>
+      </div>
+      <div class="tiles" id="backstage"></div>
+    </section>
+
+    <!-- Ficha técnica e arquivo -->
+    <section class="section rw-info">
+      <div>
+        <h2 class="label muted">Ficha técnica</h2>
+        <dl class="rw-credits">
+          <dt class="label muted">Direção criativa</dt><dd class="label">Nome Sobrenome</dd>
+          <dt class="label muted">Styling</dt><dd class="label">Nome Sobrenome</dd>
+          <dt class="label muted">Casting</dt><dd class="label">Nome Sobrenome</dd>
+          <dt class="label muted">Trilha sonora</dt><dd class="label">Nome Sobrenome</dd>
+          <dt class="label muted">Cenografia</dt><dd class="label">Nome Sobrenome</dd>
+          <dt class="label muted">Fotografia</dt><dd class="label">Nome Sobrenome</dd>
+        </dl>
+      </div>
+      <div>
+        <h2 class="label muted">Arquivo de desfiles</h2>
+        <ul class="rw-archive" id="archive"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Visualização em tela cheia -->
+  <dialog class="lightbox" id="lightbox" aria-label="Look em tela cheia">
+    <div class="lightbox__bar">
+      <span class="label" id="lbCount"></span>
+      <button class="label" id="lbClose">Fechar</button>
+    </div>
+    <div class="lightbox__stage">
+      <button class="lightbox__nav lightbox__nav--prev label" id="lbPrev" aria-label="Look anterior">←</button>
+      <img id="lbImg" alt="">
+      <button class="lightbox__nav lightbox__nav--next label" id="lbNext" aria-label="Próximo look">→</button>
+    </div>
+    <div class="lightbox__shop">
+      <p class="label muted">Comprar o look</p>
+      <ul id="lbProducts"></ul>
+    </div>
+  </dialog>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="desfile.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Produto — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="produto">
+
+  <div id="site-header"></div>
+
+  <main>
+    <div class="pdp" id="pdp">
+      <div class="pdp__gallery" id="gallery"></div>
+
+      <aside class="pdp__info">
+        <nav class="label muted pdp__crumbs" id="crumbs" aria-label="Caminho"></nav>
+        <h1 class="label pdp__name" id="name"></h1>
+        <p class="label" id="price"></p>
+
+        <fieldset class="pdp__field">
+          <legend class="label muted">Cor — <span id="colorName"></span></legend>
+          <div class="options" id="colors"></div>
+        </fieldset>
+
+        <fieldset class="pdp__field">
+          <legend class="label muted">Tamanho</legend>
+          <div class="options" id="sizes"></div>
+          <a href="ajuda.html#medidas" class="label link pdp__guide">Guia de medidas</a>
+        </fieldset>
+
+        <button class="label btn" id="addBtn">Selecione um tamanho</button>
+        <button class="label pdp__wish" id="wishBtn" aria-pressed="false"></button>
+        <p class="label muted pdp__note">Frete grátis acima de R$ 1.000. Trocas em até 30 dias.</p>
+
+        <div class="accordion">
+          <details open>
+            <summary class="label">Descrição</summary>
+            <p class="label pdp__text" id="desc"></p>
+          </details>
+          <details>
+            <summary class="label">Composição e cuidados</summary>
+            <p class="label pdp__text" id="comp"></p>
+          </details>
+          <details>
+            <summary class="label">Envio e devoluções</summary>
+            <p class="label pdp__text">Entrega em 3 a 7 dias úteis para todo o Brasil. Devolução gratuita em até 30 dias, com as etiquetas originais.</p>
+          </details>
+        </div>
+      </aside>
+    </div>
+
+    <section class="section" aria-labelledby="relTitle">
+      <div class="section__head">
+        <h2 class="label" id="relTitle">Você também pode gostar</h2>
+      </div>
+      <div class="grid" id="related"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="produto.js"></script>
+</body>
+</html>

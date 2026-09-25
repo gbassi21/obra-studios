@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Categoria — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="categoria">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Cabeçalho da categoria -->
+    <div class="plp__head">
+      <h1 class="plp__title" id="title">Feminino</h1>
+      <nav class="plp__types" id="types" aria-label="Tipos de produto"></nav>
+    </div>
+
+    <!-- Barra de ferramentas -->
+    <div class="plp__bar">
+      <span class="label" id="resultCount"></span>
+      <div class="plp__chips" id="chips"></div>
+      <div class="plp__tools">
+        <span class="label muted hide-sm">Ver</span>
+        <button class="label view-btn" data-cols="2" aria-pressed="false">2</button>
+        <button class="label view-btn is-active" data-cols="4" aria-pressed="true">4</button>
+        <button class="label" id="filterOpen" aria-expanded="false" aria-controls="filters">Filtrar e ordenar <span id="filterBadge"></span></button>
+      </div>
+    </div>
+
+    <div class="grid" id="plpGrid"></div>
+
+    <div class="plp__empty" id="empty" hidden>
+      <p class="label">Nenhum produto com esses filtros.</p>
+      <button class="label link" data-clear>Limpar filtros</button>
+    </div>
+  </main>
+
+  <!-- Painel de filtros -->
+  <div class="drawer__backdrop" id="backdrop" hidden></div>
+  <aside class="drawer" id="filters" aria-label="Filtros" aria-hidden="true">
+    <div class="drawer__head">
+      <p class="label">Filtrar e ordenar</p>
+      <button class="label" id="filterClose">Fechar</button>
+    </div>
+
+    <div class="drawer__body">
+      <section class="filter">
+        <p class="label muted">Ordenar por</p>
+        <div class="filter__list" id="fSort">
+          <label class="check label"><input type="radio" name="sort" value="relevancia" checked> Relevância</label>
+          <label class="check label"><input type="radio" name="sort" value="menor"> Menor preço</label>
+          <label class="check label"><input type="radio" name="sort" value="maior"> Maior preço</label>
+          <label class="check label"><input type="radio" name="sort" value="az"> A–Z</label>
+        </div>
+      </section>
+
+      <section class="filter">
+        <p class="label muted">Categoria</p>
+        <div class="filter__list" id="fType"></div>
+      </section>
+
+      <section class="filter">
+        <p class="label muted">Tamanho</p>
+        <div class="options" id="fSize"></div>
+      </section>
+
+      <section class="filter">
+        <p class="label muted">Cor</p>
+        <div class="filter__list" id="fColor"></div>
+      </section>
+
+      <section class="filter">
+        <p class="label muted">Preço</p>
+        <div class="filter__list" id="fPrice"></div>
+      </section>
+    </div>
+
+    <div class="drawer__foot">
+      <button class="label btn btn--ghost" data-clear>Limpar</button>
+      <button class="label btn" id="filterApply">Ver produtos</button>
+    </div>
+  </aside>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="categoria.js"></script>
+</body>
+</html>

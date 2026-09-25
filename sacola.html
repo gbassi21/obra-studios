@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sacola — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="sacola">
+
+  <div id="site-header"></div>
+
+  <main class="bag">
+    <div class="bag__head">
+      <h1 class="label">Sacola (<span id="bagCount">0</span>)</h1>
+      <a href="index.html" class="label link">Continuar comprando</a>
+    </div>
+
+    <div class="bag__layout">
+      <ul class="bag__list" id="bagList"></ul>
+
+      <aside class="bag__summary" id="summary">
+        <p class="label muted">Resumo do pedido</p>
+        <div class="bag__row"><span class="label">Subtotal</span><span class="label" id="subtotal"></span></div>
+        <div class="bag__row"><span class="label">Frete</span><span class="label" id="shipping"></span></div>
+        <p class="label muted" id="shippingNote"></p>
+        <div class="bag__row bag__row--total"><span class="label">Total</span><span class="label" id="total"></span></div>
+        <a href="checkout.html" class="label btn" id="checkout">Finalizar compra</a>
+        <p class="label muted">Pagamento em até 10x sem juros. Pix e cartão.</p>
+      </aside>
+    </div>
+
+    <div class="bag__empty" id="empty" hidden>
+      <p class="label">Sua sacola está vazia.</p>
+      <a href="index.html" class="label link">Ver novidades</a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="sacola.js"></script>
+</body>
+</html>

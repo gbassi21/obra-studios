@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ajuda — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="ajuda">
+
+  <div id="site-header"></div>
+
+  <main class="help">
+    <!-- Topo com busca -->
+    <div class="help__head">
+      <h1 class="acc__title">Ajuda</h1>
+      <div class="help__search">
+        <input id="helpSearch" type="search" placeholder="Como podemos ajudar?" aria-label="Buscar nas perguntas frequentes" autocomplete="off">
+        <span class="label muted" id="searchInfo"></span>
+      </div>
+    </div>
+
+    <!-- Atalhos -->
+    <div class="help-quick">
+      <a href="#rastrear" class="help-quick__item">
+        <span class="label muted">01</span>
+        <span class="help-quick__title">Rastrear pedido</span>
+        <span class="label muted">Status e entrega</span>
+      </a>
+      <a href="#trocas" class="help-quick__item">
+        <span class="label muted">02</span>
+        <span class="help-quick__title">Trocas e devoluções</span>
+        <span class="label muted">Grátis em até 30 dias</span>
+      </a>
+      <a href="#medidas" class="help-quick__item">
+        <span class="label muted">03</span>
+        <span class="help-quick__title">Guia de medidas</span>
+        <span class="label muted">Encontre seu tamanho</span>
+      </a>
+      <a href="#contato" class="help-quick__item">
+        <span class="label muted">04</span>
+        <span class="help-quick__title">Fale conosco</span>
+        <span class="label muted">WhatsApp, e-mail e telefone</span>
+      </a>
+    </div>
+
+    <div class="help__layout">
+      <nav class="acc__nav help__nav" aria-label="Temas de ajuda" id="helpNav"></nav>
+
+      <div class="help__content">
+        <!-- Rastreio -->
+        <section class="help-section" id="rastrear">
+          <h2 class="label co__title">Rastrear pedido</h2>
+          <form class="help-track" id="trackForm" novalidate>
+            <div class="field">
+              <label class="label muted" for="trackId">Número do pedido</label>
+              <input id="trackId" placeholder="OB000000" required autocomplete="off">
+              <span class="field__error label"></span>
+            </div>
+            <div class="field">
+              <label class="label muted" for="trackEmail">E-mail da compra</label>
+              <input id="trackEmail" type="email" required autocomplete="email">
+              <span class="field__error label"></span>
+            </div>
+            <button type="submit" class="label btn">Rastrear</button>
+          </form>
+          <div id="trackResult" aria-live="polite"></div>
+        </section>
+
+        <!-- Perguntas frequentes -->
+        <div id="faq"></div>
+
+        <p class="label muted help-noresult" id="noResult" hidden>
+          Nenhuma resposta encontrada. <a href="#contato" class="link">Fale com a gente</a>.
+        </p>
+
+        <!-- Guia de medidas -->
+        <section class="help-section" id="medidas">
+          <h2 class="label co__title">Guia de medidas</h2>
+          <div class="size-tools">
+            <div class="tabs" role="tablist" id="sizeTabs">
+              <button type="button" class="label tab is-active" data-table="feminino" role="tab" aria-selected="true">Feminino</button>
+              <button type="button" class="label tab" data-table="masculino" role="tab" aria-selected="false">Masculino</button>
+              <button type="button" class="label tab" data-table="jeans" role="tab" aria-selected="false">Jeans</button>
+              <button type="button" class="label tab" data-table="calcados" role="tab" aria-selected="false">Calçados</button>
+            </div>
+            <div class="size-unit">
+              <button type="button" class="label view-btn is-active" data-unit="cm" aria-pressed="true">cm</button>
+              <button type="button" class="label view-btn" data-unit="in" aria-pressed="false">pol</button>
+            </div>
+          </div>
+          <div class="size-table" id="sizeTable"></div>
+          <p class="label muted help-text">Meça o corpo, não a roupa. Busto: na parte mais cheia. Cintura: na parte mais estreita. Quadril: na parte mais larga. Pé: do calcanhar à ponta do dedo maior, em pé. Entre dois tamanhos, escolha o maior para um caimento mais solto.</p>
+        </section>
+
+        <!-- Contato -->
+        <section class="help-section" id="contato">
+          <h2 class="label co__title">Fale conosco</h2>
+          <div class="contact-grid">
+            <div>
+              <p class="label muted">WhatsApp</p>
+              <a href="#" class="label link">(11) 00000-0000</a>
+              <p class="label muted">Seg a sex, 9h às 20h. Sáb, 10h às 16h.</p>
+            </div>
+            <div>
+              <p class="label muted">E-mail</p>
+              <a href="mailto:atendimento@exemplo.com" class="label link">atendimento@exemplo.com</a>
+              <p class="label muted">Resposta em até 1 dia útil.</p>
+            </div>
+            <div>
+              <p class="label muted">Telefone</p>
+              <p class="label">0800 000 0000</p>
+              <p class="label muted">Seg a sex, 9h às 18h.</p>
+            </div>
+            <div>
+              <p class="label muted">Loja</p>
+              <p class="label">Rua Oscar Freire, 000</p>
+              <p class="label muted">São Paulo — SP. Todos os dias, 10h às 22h.</p>
+            </div>
+          </div>
+
+          <form class="acc-form help-form" id="contactForm" novalidate>
+            <p class="label muted">Ou envie uma mensagem</p>
+            <div class="fields">
+              <div class="field"><label class="label muted" for="cName">Nome</label><input id="cName" required autocomplete="name"><span class="field__error label"></span></div>
+              <div class="field"><label class="label muted" for="cEmail">E-mail</label><input id="cEmail" type="email" required autocomplete="email"><span class="field__error label"></span></div>
+              <div class="field">
+                <label class="label muted" for="cTopic">Assunto</label>
+                <select id="cTopic" class="label">
+                  <option>Pedido</option><option>Troca ou devolução</option><option>Pagamento</option><option>Produto</option><option>Outro</option>
+                </select>
+              </div>
+              <div class="field"><label class="label muted" for="cOrder">Nº do pedido <span class="opt">(opcional)</span></label><input id="cOrder" placeholder="OB000000"></div>
+              <div class="field field--full"><label class="label muted" for="cMsg">Mensagem</label><textarea id="cMsg" rows="5" required minlength="10"></textarea><span class="field__error label"></span></div>
+            </div>
+            <div class="acc-form__actions"><button type="submit" class="label btn">Enviar mensagem</button></div>
+            <p class="label link" id="contactSent" hidden></p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="ajuda.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Carreiras — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="carreiras">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="rw-hero rw-hero--short">
+      <img src="https://images.unsplash.com/photo-1753162657191-c8002d067f1d?w=1800&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Equipe no estúdio">
+      <div class="rw-hero__meta"><span class="label">Carreiras</span><span class="label" id="jobCountTop"></span></div>
+      <h1 class="rw-hero__title">Venha fazer parte da obra.</h1>
+    </section>
+
+    <section class="rw-intro">
+      <p class="label muted">Trabalhar aqui</p>
+      <p class="rw-intro__text">Somos uma equipe pequena, curiosa e exigente com os detalhes. Procuramos pessoas que gostam de fazer bem feito — no ateliê, nas lojas ou no escritório.</p>
+    </section>
+
+    <section class="section">
+      <div class="section__head"><h2 class="label">Benefícios</h2></div>
+      <div class="values">
+        <div class="value"><h3 class="page-h3">Desconto nas coleções</h3><p class="prose">Desconto em todas as peças e um enxoval por temporada para quem trabalha nas lojas.</p></div>
+        <div class="value"><h3 class="page-h3">Saúde</h3><p class="prose">Plano de saúde e odontológico, extensível a dependentes.</p></div>
+        <div class="value"><h3 class="page-h3">Tempo livre</h3><p class="prose">Folga no dia do aniversário e recesso entre o Natal e o Ano-Novo para o escritório.</p></div>
+        <div class="value"><h3 class="page-h3">Aprender</h3><p class="prose">Verba anual para cursos e visitas às oficinas parceiras.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="vagas">
+      <div class="section__head">
+        <h2 class="label">Vagas abertas (<span id="jobCount">0</span>)</h2>
+      </div>
+      <div class="jobs__filters">
+        <div class="plp__types" id="areaFilter"></div>
+        <div class="plp__types" id="placeFilter"></div>
+      </div>
+      <div class="jobs" id="jobs"></div>
+      <p class="label muted jobs__none" id="jobsNone" hidden>Nenhuma vaga com esses filtros.</p>
+      <p class="label muted jobs__open">Não encontrou sua vaga? Envie seu portfólio para <a href="mailto:carreiras@exemplo.com" class="link">carreiras@exemplo.com</a>.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="carreiras.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Conta — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="conta">
+
+  <div id="site-header"></div>
+
+  <!-- Visitante: entrar ou criar conta -->
+  <main class="acc-guest" id="guestView" hidden>
+    <h1 class="acc__title">Conta</h1>
+    <p class="label muted acc__demo">Demonstração — os dados ficam só neste navegador e nenhuma senha é guardada.</p>
+
+    <div class="acc-guest__cols">
+      <form class="acc-form" id="loginForm" novalidate>
+        <h2 class="label co__title">Entrar</h2>
+        <div class="field">
+          <label class="label muted" for="loginEmail">E-mail</label>
+          <input id="loginEmail" type="email" autocomplete="email" required>
+          <span class="field__error label"></span>
+        </div>
+        <div class="field">
+          <label class="label muted" for="loginPass">Senha</label>
+          <input id="loginPass" type="password" autocomplete="current-password" required minlength="6">
+          <span class="field__error label"></span>
+        </div>
+        <a href="#" class="label link" id="forgot">Esqueci minha senha</a>
+        <p class="label muted" id="forgotMsg" hidden>Se houver uma conta com esse e-mail, você vai receber um link para criar uma nova senha.</p>
+        <button type="submit" class="label btn">Entrar</button>
+      </form>
+
+      <form class="acc-form" id="signupForm" novalidate>
+        <h2 class="label co__title">Criar conta</h2>
+        <div class="field">
+          <label class="label muted" for="signName">Nome completo</label>
+          <input id="signName" autocomplete="name" required>
+          <span class="field__error label"></span>
+        </div>
+        <div class="field">
+          <label class="label muted" for="signEmail">E-mail</label>
+          <input id="signEmail" type="email" autocomplete="email" required>
+          <span class="field__error label"></span>
+        </div>
+        <div class="field">
+          <label class="label muted" for="signPass">Senha <span class="opt">(mínimo 6 caracteres)</span></label>
+          <input id="signPass" type="password" autocomplete="new-password" required minlength="6">
+          <span class="field__error label"></span>
+        </div>
+        <label class="check label"><input type="checkbox" id="signNews"> Quero receber novidades por e-mail</label>
+        <button type="submit" class="label btn">Criar conta</button>
+        <ul class="acc-perks">
+          <li class="label muted">Acompanhe seus pedidos</li>
+          <li class="label muted">Salve endereços e finalize mais rápido</li>
+          <li class="label muted">Guarde peças na lista de desejos</li>
+          <li class="label muted">Acesso antecipado a lançamentos</li>
+        </ul>
+      </form>
+    </div>
+  </main>
+
+  <!-- Conta aberta -->
+  <main class="acc" id="accountView" hidden>
+    <h1 class="acc__title" id="hello"></h1>
+    <div class="acc__layout">
+      <nav class="acc__nav" aria-label="Minha conta">
+        <a href="#visao-geral" class="label" data-tab="visao-geral">Visão geral</a>
+        <a href="#pedidos" class="label" data-tab="pedidos">Pedidos</a>
+        <a href="#desejos" class="label" data-tab="desejos">Lista de desejos</a>
+        <a href="#enderecos" class="label" data-tab="enderecos">Endereços</a>
+        <a href="#dados" class="label" data-tab="dados">Dados pessoais</a>
+        <button class="label muted" id="logout">Sair</button>
+      </nav>
+      <section class="acc__panel" id="panel" aria-live="polite"></section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="conta.js"></script>
+</body>
+</html>

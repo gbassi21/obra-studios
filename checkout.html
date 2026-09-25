@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Finalizar compra — Obra Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="checkout">
+
+  <div id="site-header"></div>
+
+  <main class="co" id="checkoutView">
+    <form class="co__form" id="coForm" novalidate>
+      <p class="label muted co__demo">Checkout de demonstração — nenhum pagamento é processado e nenhum dado é enviado.</p>
+
+      <!-- 1. Contato -->
+      <section class="co__step">
+        <h2 class="label co__title"><span>01</span> Contato</h2>
+        <div class="fields">
+          <div class="field field--full">
+            <label class="label muted" for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <span class="field__error label"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="phone">Celular</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" data-mask="phone" placeholder="(11) 90000-0000" required minlength="14">
+            <span class="field__error label"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="cpf">CPF</label>
+            <input id="cpf" name="cpf" inputmode="numeric" data-mask="cpf" placeholder="000.000.000-00" required data-validate="cpf">
+            <span class="field__error label"></span>
+          </div>
+        </div>
+        <label class="check label"><input type="checkbox" name="news"> Quero receber novidades por e-mail</label>
+      </section>
+
+      <!-- 2. Entrega -->
+      <section class="co__step">
+        <h2 class="label co__title"><span>02</span> Endereço de entrega</h2>
+        <div class="fields">
+          <div class="field field--full">
+            <label class="label muted" for="fullname">Nome completo</label>
+            <input id="fullname" name="fullname" autocomplete="name" required>
+            <span class="field__error label"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="cep">CEP</label>
+            <input id="cep" name="cep" inputmode="numeric" data-mask="cep" autocomplete="postal-code" placeholder="00000-000" required minlength="9">
+            <span class="field__error label"></span>
+            <span class="field__hint label muted" id="cepHint"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="city">Cidade / UF</label>
+            <input id="city" name="city" autocomplete="address-level2" required>
+            <span class="field__error label"></span>
+          </div>
+          <div class="field field--full">
+            <label class="label muted" for="street">Rua</label>
+            <input id="street" name="street" autocomplete="address-line1" required>
+            <span class="field__error label"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="number">Número</label>
+            <input id="number" name="number" inputmode="numeric" required>
+            <span class="field__error label"></span>
+          </div>
+          <div class="field">
+            <label class="label muted" for="complement">Complemento <span class="opt">(opcional)</span></label>
+            <input id="complement" name="complement" autocomplete="address-line2">
+          </div>
+          <div class="field field--full">
+            <label class="label muted" for="district">Bairro</label>
+            <input id="district" name="district" required>
+            <span class="field__error label"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Frete -->
+      <section class="co__step">
+        <h2 class="label co__title"><span>03</span> Envio</h2>
+        <div class="choices" id="shippingChoices">
+          <label class="choice">
+            <input type="radio" name="shipping" value="padrao" checked>
+            <span class="label">Padrão — 5 a 7 dias úteis</span>
+            <span class="label" id="standardPrice"></span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="shipping" value="expressa">
+            <span class="label">Expressa — 1 a 2 dias úteis</span>
+            <span class="label">R$ 90</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="shipping" value="retirada">
+            <span class="label">Retirar na loja — São Paulo, Oscar Freire</span>
+            <span class="label">Grátis</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 4. Pagamento -->
+      <section class="co__step">
+        <h2 class="label co__title"><span>04</span> Pagamento</h2>
+        <div class="tabs" role="tablist">
+          <button type="button" class="label tab is-active" data-pay="cartao" role="tab" aria-selected="true">Cartão de crédito</button>
+          <button type="button" class="label tab" data-pay="pix" role="tab" aria-selected="false">Pix — 5% off</button>
+          <button type="button" class="label tab" data-pay="boleto" role="tab" aria-selected="false">Boleto</button>
+        </div>
+
+        <div class="pay" data-panel="cartao">
+          <div class="fields">
+            <div class="field field--full">
+              <label class="label muted" for="cardNumber">Número do cartão</label>
+              <input id="cardNumber" inputmode="numeric" data-mask="card" autocomplete="off" placeholder="0000 0000 0000 0000" required minlength="19" data-pay-field="cartao">
+              <span class="field__error label"></span>
+            </div>
+            <div class="field field--full">
+              <label class="label muted" for="cardName">Nome impresso no cartão</label>
+              <input id="cardName" autocomplete="off" required data-pay-field="cartao">
+              <span class="field__error label"></span>
+            </div>
+            <div class="field">
+              <label class="label muted" for="cardExp">Validade</label>
+              <input id="cardExp" inputmode="numeric" data-mask="exp" autocomplete="off" placeholder="MM/AA" required minlength="5" data-pay-field="cartao" data-validate="exp">
+              <span class="field__error label"></span>
+            </div>
+            <div class="field">
+              <label class="label muted" for="cardCvv">CVV</label>
+              <input id="cardCvv" inputmode="numeric" data-mask="cvv" autocomplete="off" placeholder="000" required minlength="3" data-pay-field="cartao">
+              <span class="field__error label"></span>
+            </div>
+            <div class="field field--full">
+              <label class="label muted" for="installments">Parcelas</label>
+              <select id="installments" class="label"></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="pay" data-panel="pix" hidden>
+          <p class="label pay__text">O QR Code é gerado após a confirmação do pedido e vale por 30 minutos. Você ganha 5% de desconto no total.</p>
+        </div>
+
+        <div class="pay" data-panel="boleto" hidden>
+          <p class="label pay__text">O boleto é gerado após a confirmação e vence em 3 dias úteis. O pedido é enviado após a compensação, em até 2 dias úteis.</p>
+        </div>
+      </section>
+
+      <label class="check label"><input type="checkbox" id="terms" required> Li e aceito os <a href="termos.html" class="link" target="_blank" rel="noopener">termos de compra</a> e a <a href="privacidade.html" class="link" target="_blank" rel="noopener">política de privacidade</a></label>
+      <span class="field__error label" id="termsError"></span>
+
+      <button type="submit" class="label btn" id="placeOrder">Confirmar pedido</button>
+    </form>
+
+    <!-- Resumo -->
+    <aside class="co__summary">
+      <div class="co__summary-head">
+        <p class="label">Resumo (<span id="sumCount">0</span>)</p>
+        <a href="sacola.html" class="label link">Editar</a>
+      </div>
+      <ul class="co__items" id="sumItems"></ul>
+      <div class="co__coupon">
+        <input id="coupon" class="label" placeholder="Cupom de desconto" aria-label="Cupom de desconto">
+        <button type="button" class="label link" id="applyCoupon">Aplicar</button>
+      </div>
+      <p class="label muted" id="couponMsg"></p>
+      <div class="bag__row"><span class="label">Subtotal</span><span class="label" id="sumSubtotal"></span></div>
+      <div class="bag__row" id="discountRow" hidden><span class="label">Desconto</span><span class="label" id="sumDiscount"></span></div>
+      <div class="bag__row"><span class="label">Envio</span><span class="label" id="sumShipping"></span></div>
+      <div class="bag__row bag__row--total"><span class="label">Total</span><span class="label" id="sumTotal"></span></div>
+      <p class="label muted" id="sumInstallments"></p>
+    </aside>
+  </main>
+
+  <!-- Confirmação -->
+  <main class="co-done" id="doneView" hidden>
+    <p class="label muted">Pedido <span id="orderId"></span></p>
+    <h1 class="co-done__title">Obrigado.</h1>
+    <p class="label co-done__text" id="doneText"></p>
+    <div class="co-done__grid">
+      <div>
+        <p class="label muted">Entrega</p>
+        <p class="label" id="doneAddress"></p>
+      </div>
+      <div>
+        <p class="label muted">Pagamento</p>
+        <p class="label" id="donePayment"></p>
+      </div>
+      <div>
+        <p class="label muted">Total</p>
+        <p class="label" id="doneTotal"></p>
+      </div>
+    </div>
+    <a href="index.html" class="label link">Continuar comprando</a>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

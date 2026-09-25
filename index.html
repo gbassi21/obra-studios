@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Obra Studios</title>
+  <meta name="description" content="Obra Studios — moda contemporânea, edição editorial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero dividido -->
+    <section class="hero" aria-label="Destaque">
+      <a class="hero__half" href="categoria.html?g=feminino">
+        <span class="label hero__label">Comprar feminino</span>
+        <img src="https://images.unsplash.com/photo-1613915617430-8ab0fd7c6baf?w=1200&amp;h=1600&amp;fit=crop&amp;auto=format&amp;q=75" alt="Editorial feminino, outono-inverno">
+      </a>
+      <a class="hero__half" href="categoria.html?g=masculino">
+        <span class="label hero__label">Comprar masculino</span>
+        <img src="https://images.unsplash.com/photo-1787044817434-b6d1f927ac21?w=1200&amp;h=1600&amp;fit=crop&amp;auto=format&amp;q=75" alt="Editorial masculino, outono-inverno">
+      </a>
+      <h1 class="hero__wordmark">Obra Studios</h1>
+    </section>
+
+    <!-- Grade de produtos -->
+    <section class="section" id="feminino" aria-labelledby="gridTitle">
+      <div class="section__head">
+        <h2 class="label" id="gridTitle">Novidades — Outono Inverno 26</h2>
+        <a href="categoria.html?g=feminino" class="label link">Ver tudo</a>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <!-- Segunda grade -->
+    <section class="section" id="masculino" aria-labelledby="gridTitle2">
+      <div class="section__head">
+        <h2 class="label" id="gridTitle2">Masculino — Essenciais</h2>
+        <a href="categoria.html?g=masculino" class="label link">Ver tudo</a>
+      </div>
+      <div class="grid" id="productGrid2"></div>
+    </section>
+
+    <!-- Fileira editorial -->
+    <section class="section" id="desfile" aria-labelledby="editTitle">
+      <div class="section__head">
+        <h2 class="label" id="editTitle">O universo Obra</h2>
+        <a href="desfile.html" class="label link">Ver desfile Outono Inverno 26</a>
+      </div>
+      <div class="tiles">
+        <figure class="tile"><img src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?w=700&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Arara com peças em tons neutros" loading="lazy"></figure>
+        <figure class="tile"><img src="https://images.unsplash.com/photo-1769107805412-90d9191d53e9?w=700&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Interior da loja" loading="lazy"></figure>
+        <figure class="tile"><img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=700&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Jaquetas na arara" loading="lazy"></figure>
+        <figure class="tile"><img src="https://images.unsplash.com/photo-1522743791393-522312deeebf?w=700&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Arquitetura em concreto" loading="lazy"></figure>
+        <figure class="tile"><img src="https://images.unsplash.com/photo-1764593605450-15d6fc79a2fa?w=700&amp;h=900&amp;fit=crop&amp;auto=format&amp;q=75" alt="Bastidores do desfile" loading="lazy"></figure>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
