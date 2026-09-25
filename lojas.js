@@ -66,7 +66,7 @@ function render() {
     const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${s.address}, ${s.city}`)}`;
     return `
     <article class="store" id="${s.id}">
-      <figure class="store__img"><img src="${unsplash(s.img, 1000, 1250)}" alt="Loja ${s.name}" loading="lazy"></figure>
+      <figure class="store__img"><img src="${photo(s.img)}" alt="Loja ${s.name}" loading="lazy"></figure>
       <div class="store__info">
         <div class="store__title">
           <p class="label muted">${s.city}${s.tag ? ` — ${s.tag}` : ""}</p>

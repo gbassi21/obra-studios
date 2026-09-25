@@ -9,3 +9,9 @@ Para abrir localmente, sirva a pasta com qualquer servidor estático, por exempl
 ```
 python -m http.server 5510
 ```
+
+## Publicar uma atualização
+
+Antes de enviar ao GitHub, rode `python atualizar-versao.py`. Ele coloca um número de versão nos arquivos CSS e JS de todas as páginas, para quem já visitou o site não ver páginas novas misturadas com arquivos antigos guardados pelo navegador.
+
+As fotos ficam na pasta `img/` (e as miniaturas em `img/sm/`), em WebP.

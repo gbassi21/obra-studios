@@ -110,14 +110,18 @@ function recommendSize(p, body = {}) {
   return { status: alt ? "entre" : "ideal", size, alt: alt ? String(alt) : null, text: why };
 }
 
-// Fotos do Unsplash (licença gratuita). Troque pelos IDs ou URLs das suas fotos.
-function unsplash(photoId, w = 800, h = 1066) {
-  return `https://images.unsplash.com/photo-${photoId}?w=${w}&h=${h}&fit=crop&crop=faces,center&auto=format&q=75`;
+// Fotos guardadas no projeto (pasta img/), baixadas do Unsplash (licença gratuita).
+// Para usar fotos suas, salve-as em img/ e troque os IDs abaixo pelo nome do arquivo.
+function photo(photoId) {
+  return `img/${photoId}.webp`;
 }
 
-function productImg(id, n, w = 800, h = 1066) {
+// Fotos de produto têm uma versão pequena (img/sm/) para miniaturas
+function productImg(id, n, w = 800) {
   const imgs = findProduct(id)?.images || [];
-  return imgs.length ? unsplash(imgs[(n - 1) % imgs.length], w, h) : "";
+  if (!imgs.length) return "";
+  const file = imgs[(n - 1) % imgs.length];
+  return w <= 400 ? `img/sm/${file}.webp` : photo(file);
 }
 
 function findProduct(id) {

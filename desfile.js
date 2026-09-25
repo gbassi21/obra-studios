@@ -26,7 +26,7 @@ const LOOKS = [
 ];
 const BACKSTAGE = ["1719613959577-434f93b266d7", "1784833066652-e2809e77b0e4", "1760720350998-1bbc55885ccf", "1764593605450-15d6fc79a2fa", "1784833170317-982391e74129"];
 const offset = SEASONS.indexOf(season) * 7;
-const lookImg = (n, w = 800, h = 1200) => unsplash(LOOKS[(n - 1 + offset) % LOOKS.length], w, h);
+const lookImg = (n) => photo(LOOKS[(n - 1 + offset) % LOOKS.length]);
 const pad = (n) => String(n).padStart(2, "0");
 
 // Cada look aponta para 1 a 3 peças do catálogo
@@ -37,7 +37,7 @@ function lookProducts(n) {
 
 // Capa e texto
 document.title = `Desfile ${season.title} — Obra Studios`;
-$("heroImg").src = unsplash(season.hero, 1800, 1100);
+$("heroImg").src = photo(season.hero);
 $("heroImg").alt = `Desfile ${season.title}`;
 $("heroTitle").textContent = season.title;
 $("heroPlace").textContent = season.place;
@@ -57,7 +57,7 @@ $("lookGrid").innerHTML = Array.from({ length: season.looks }, (_, i) => {
 
 // Bastidores
 $("backstage").innerHTML = [1, 2, 3, 4, 5]
-  .map((n) => `<figure class="tile"><img src="${unsplash(BACKSTAGE[(n - 1 + SEASONS.indexOf(season)) % BACKSTAGE.length], 700, 900)}" alt="Bastidores ${n}" loading="lazy"></figure>`)
+  .map((n) => `<figure class="tile"><img src="${photo(BACKSTAGE[(n - 1 + SEASONS.indexOf(season)) % BACKSTAGE.length])}" alt="Bastidores ${n}" loading="lazy"></figure>`)
   .join("");
 
 // Arquivo de temporadas
@@ -87,7 +87,7 @@ let current = 1;
 
 function showLook(n) {
   current = ((n - 1 + season.looks) % season.looks) + 1;
-  $("lbImg").src = lookImg(current, 1200, 1800);
+  $("lbImg").src = lookImg(current);
   $("lbImg").alt = `Look ${pad(current)}`;
   $("lbCount").textContent = `Look ${pad(current)} / ${season.looks}`;
   $("lbProducts").innerHTML = lookProducts(current)
@@ -103,7 +103,7 @@ function showLook(n) {
     </li>`)
     .join("");
   // pré-carrega os vizinhos
-  [current + 1, current - 1].forEach((k) => { new Image().src = lookImg(((k - 1 + season.looks) % season.looks) + 1, 1200, 1800); });
+  [current + 1, current - 1].forEach((k) => { new Image().src = lookImg(((k - 1 + season.looks) % season.looks) + 1); });
 }
 
 $("lookGrid").addEventListener("click", (e) => {
